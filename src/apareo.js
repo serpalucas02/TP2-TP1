@@ -4,7 +4,9 @@
  * @param {number[]} arrB otro array de números ordenados
  * @returns {number[]} un nuevo array de números ordenados
  */
-function combinarDosArrays(arrA, arrB) {
+export function combinarDosArrays(arrA, arrB) {
+    const conjunto = new Set([...arrA, ...arrB]);
+    return [...conjunto].sort((a, b) => a - b);
 }
 
 /**
@@ -12,7 +14,7 @@ function combinarDosArrays(arrA, arrB) {
  * @param {number[][]} arrs el array de arrays de números que quiero combinar
  * @returns {number[]} el nuevo array de números ordenados
  */
-function combinarNArrays(arrs) {
+export function combinarNArrays(arrs) {
+    const conjunto = new Set(arrs.flat());
+    return [...conjunto].sort((a, b) => a - b);
 }
-
-// exportar ambas funciones
